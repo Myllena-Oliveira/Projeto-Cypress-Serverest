@@ -1,4 +1,4 @@
 // Importa os custom commands
-import './commands';
+import './commands/index';
 
 import '@shelex/cypress-allure-plugin';

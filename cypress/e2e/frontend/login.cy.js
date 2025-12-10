@@ -1,4 +1,4 @@
-import loginPage from '../../support/pageObjects/loginPage';
+import loginPage from '../../support/pages/loginPage';
 
 describe('Login no Frontend', () => {
     it('Validar login com credenciais válidas', () => {

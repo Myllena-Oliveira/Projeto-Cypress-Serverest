@@ -1,4 +1,4 @@
-import CadastroPage from '../../support/pageObjects/CadastroPage';
+import CadastroPage from '../../support/pages/cadastroPage';
 
 describe('Cadastro de Usuário', () => {
     it('Validar cadastro com todos os campos preenchidos', () => {

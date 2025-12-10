@@ -4,10 +4,10 @@
   "scripts": {
     "test:e2e": "cypress run --spec 'cypress/e2e/frontend/*'",
     "test:api": "cypress run --spec 'cypress/e2e/api/*'",
-    "test:cucumber": "cypress run --spec 'cypress/e2e/features/**/*.feature'"
+    "test:bdd": "cypress run --spec 'cypress/e2e/bdd/features/**/*.feature'"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}"
+    "stepDefinitions": "cypress/e2e/bdd/step_definitions/**/*.{js,ts}"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
