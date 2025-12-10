@@ -28,24 +28,24 @@ CYPRESS_API_PASSWORD=sua_senha_api
 ## 📂 Estrutura do Projeto
 ```
 cypress/
-├── e2e/
-│   ├── api/                           # Testes de API
+├── e2e/                              # Testes End-to-End
+│   ├── api/                          # Testes de API (Cypress puro)
 │   │   ├── criarUsuario.cy.js
 │   │   ├── listarProdutos.cy.js
 │   │   └── loginApi.cy.js
-│   ├── frontend/                      # Testes E2E (UI)
+│   ├── frontend/                     # Testes de Interface (Cypress puro)
 │   │   ├── cadastro.cy.js
 │   │   ├── login.cy.js
 │   │   └── produtos.cy.js
-│   └── bdd/                           # Testes BDD/Cucumber
-│       ├── features/                  # Arquivos .feature (Gherkin)
+│   └── bdd/                          # Testes BDD com Cucumber
+│       ├── features/                 # Arquivos .feature (Gherkin)
 │       │   ├── api-criar-usuario.feature
 │       │   ├── api-listar-produtos.feature
 │       │   ├── api-login.feature
 │       │   ├── cadastro.feature
 │       │   ├── login.feature
 │       │   └── produtos.feature
-│       └── step_definitions/          # Implementação dos steps
+│       └── step_definitions/         # Implementação dos steps
 │           ├── auth.steps.js
 │           ├── cadastro.steps.js
 │           ├── common.steps.js
@@ -53,19 +53,19 @@ cypress/
 │           ├── produto.steps.js
 │           ├── produtos-frontend.steps.js
 │           └── usuario.steps.js
-├── fixtures/                          # Dados de teste
+├── fixtures/                         # Dados de teste (JSON)
 │   ├── usuarios.json
 │   └── produtos.json
-├── support/
-│   ├── commands/
-│   │   └── index.js                   # Custom commands
-│   ├── pages/                         # Page Objects
+├── support/                          # Arquivos de suporte
+│   ├── commands/                     # Custom commands
+│   │   └── index.js
+│   ├── pages/                        # Page Objects
 │   │   ├── cadastroPage.js
 │   │   └── loginPage.js
-│   ├── helpers/                       # Funções utilitárias
+│   ├── helpers/                      # Funções utilitárias
 │   │   └── index.js
-│   └── e2e.js                        # Configurações globais
-└── screenshots/                       # Screenshots de falhas
+│   └── e2e.js                        # Setup global
+└── screenshots/                      # Screenshots de falhas
 ```
 
 ## ▶️ Como Executar os Testes
