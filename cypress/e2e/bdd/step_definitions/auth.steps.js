@@ -1,7 +1,5 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 
-let usuarioCriado;
-
 // Contexto: API disponível
 Given('que a API de login está disponível em {string}', (url) => {
   cy.wrap(url).as('apiLoginUrl');
@@ -9,27 +7,17 @@ Given('que a API de login está disponível em {string}', (url) => {
 
 // Criar usuário para login
 Given('que existe um usuário cadastrado no sistema', () => {
-  cy.criarUsuarioAPI().then((usuario) => {
-    usuarioCriado = usuario;
-    cy.wrap(usuario).as('usuarioCadastrado');
+  cy.criarUsuarioAPI().then((result) => {
+    cy.wrap(result.usuario).as('usuarioCadastrado');
   });
 });
 
 // Realizar login
 When('eu envio uma requisição POST para realizar login', () => {
   cy.get('@usuarioCadastrado').then((usuario) => {
-    cy.get('@apiLoginUrl').then((url) => {
-      cy.request({
-        method: 'POST',
-        url: url,
-        body: {
-          email: usuario.email,
-          password: usuario.password
-        }
-      }).then((response) => {
-        cy.wrap(response).as('responseLogin');
-        cy.wrap(response.body.authorization).as('tokenAuth');
-      });
+    cy.loginAPI(usuario.email, usuario.password).then((loginResult) => {
+      cy.wrap(loginResult.response).as('responseLogin');
+      cy.wrap(loginResult.token).as('tokenAuth');
     });
   });
 });

@@ -9,6 +9,8 @@ module.exports = defineConfig({
         baseUrl: "https://front.serverest.dev",
         specPattern: "cypress/e2e/**/*.{cy.js,feature}",
         env: {
+            apiBaseUrl: "https://serverest.dev",
+            frontBaseUrl: "https://front.serverest.dev",
             frontEmail: process.env.CYPRESS_FRONT_EMAIL, 
             frontPassword: process.env.CYPRESS_FRONT_PASSWORD,
             apiEmail: process.env.CYPRESS_API_EMAIL,

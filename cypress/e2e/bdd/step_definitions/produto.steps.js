@@ -7,8 +7,9 @@ Given('que a API de produtos está disponível em {string}', (url) => {
 
 // Listar produtos
 When('eu envio uma requisição GET para listar produtos', () => {
-  cy.get('@apiProdutosUrl').then((url) => {
-    cy.request('GET', url).as('responseProdutos');
+  // Usa o custom command existente
+  cy.listarProdutosAPI().then((response) => {
+    cy.wrap(response).as('responseProdutos');
   });
 });
 

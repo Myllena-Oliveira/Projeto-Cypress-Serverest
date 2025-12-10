@@ -1,7 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-let usuarioCriado;
-
 // Steps para o cenário de login
 Given('que o usuário está na página de login do sistema, através da URL {string}', (url) => {
     cy.visit('/login');
@@ -13,9 +11,8 @@ Given('que estou na página de login', () => {
 
 Given('possuir um cadastro ativo', () => {
     // Criar usuário para login
-    cy.criarUsuarioAPI({ administrador: 'false' }).then((usuario) => {
-        usuarioCriado = usuario;
-        cy.wrap(usuario).as('usuarioLogado');
+    cy.criarUsuarioAPI({ administrador: 'false' }).then((result) => {
+        cy.wrap(result.usuario).as('usuarioLogado');
     });
 });
 

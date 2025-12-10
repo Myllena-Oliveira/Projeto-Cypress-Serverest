@@ -12,7 +12,8 @@ describe('Login no Frontend', () => {
 
     it('Validar login manual com usuário criado via API', () => {
         // Cria usuário NÃO administrador via API primeiro
-        cy.criarUsuarioAPI({ administrador: 'false' }).then((usuario) => {
+        cy.criarUsuarioAPI({ administrador: 'false' }).then((result) => {
+            const { usuario } = result;
             // Dado que o usuário está na página de login
             cy.visit('/login');
             cy.url().should('include', '/login');

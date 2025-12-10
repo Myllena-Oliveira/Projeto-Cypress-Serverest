@@ -11,11 +11,13 @@ describe('API - Login', () => {
 
   it('Deve fazer login com usuário existente', () => {
     // Cria usuário primeiro
-    cy.criarUsuarioAPI().then((usuario) => {
+    cy.criarUsuarioAPI().then((result) => {
+      const { usuario } = result;
       // Depois faz login com as credenciais do usuário criado
-      cy.loginAPI(usuario.email, usuario.password).then((token) => {
-        expect(token).to.be.a('string');
-        expect(token).to.not.be.empty;
+      cy.loginAPI(usuario.email, usuario.password).then((loginResult) => {
+        expect(loginResult.token).to.be.a('string');
+        expect(loginResult.token).to.not.be.empty;
+        expect(loginResult.response.status).to.equal(200);
       });
     });
   });
