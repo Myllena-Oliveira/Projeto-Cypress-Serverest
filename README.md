@@ -17,13 +17,12 @@ npm install
 ```
 
 ## ⚙️ Configuração
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-```env
-CYPRESS_FRONT_EMAIL=seu_email@example.com
-CYPRESS_FRONT_PASSWORD=sua_senha
-CYPRESS_API_EMAIL=seu_email_api@example.com
-CYPRESS_API_PASSWORD=sua_senha_api
-```
+**Nenhuma configuração adicional necessária!** 🎉
+
+Todos os testes utilizam **dados dinâmicos** gerados automaticamente:
+- Usuários criados com `Date.now()` para garantir unicidade
+- Nomes e senhas aleatórios gerados por funções helper
+- Não requer credenciais fixas ou variáveis de ambiente
 
 ## 📂 Estrutura do Projeto
 ```

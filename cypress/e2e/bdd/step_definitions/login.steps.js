@@ -23,16 +23,8 @@ When('preencher os campos de  "E-mail" e "Senha" com dados válidos', () => {
     });
 });
 
-When('eu preencho o email com dados válidos', () => {
-    cy.get('[data-testid="email"]').type(Cypress.env('frontEmail'));
-});
-
 When('eu preencho o email {string}', (email) => {
     cy.get('[data-testid="email"]').type(email);
-});
-
-When('eu preencho a senha com dados válidos', () => {
-    cy.get('[data-testid="password"]').type(Cypress.env('frontPassword'));
 });
 
 When('eu preencho a senha {string}', (senha) => {
