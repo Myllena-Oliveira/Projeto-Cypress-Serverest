@@ -1,10 +1,7 @@
 describe('Carrinho de compras', () => {
     it('Validar adição de produto ao carrinho', () => {
         // Dado que o usuário está logado no sistema
-        cy.visit('/login');
-        cy.get('[data-testid="email"]').type(Cypress.env('frontEmail'));
-        cy.get('[data-testid="senha"]').type(Cypress.env('frontPassword'));
-        cy.get('[data-testid="entrar"]').click();
+        cy.criarELogarFrontend({ administrador: 'false' });
         
         // E na página inicial, visualizar os produtos
         cy.url().should('include', '/home');

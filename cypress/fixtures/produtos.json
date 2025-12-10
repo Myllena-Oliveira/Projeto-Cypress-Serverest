@@ -1,0 +1,14 @@
+{
+  "produtoBase": {
+    "nome": "Produto Teste",
+    "preco": 100,
+    "descricao": "Descrição do produto teste",
+    "quantidade": 10
+  },
+  "produtoSemEstoque": {
+    "nome": "Produto Sem Estoque",
+    "preco": 50,
+    "descricao": "Produto teste sem estoque",
+    "quantidade": 0
+  }
+}

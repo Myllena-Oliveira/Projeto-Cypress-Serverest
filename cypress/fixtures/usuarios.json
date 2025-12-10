@@ -1,0 +1,38 @@
+{
+  "usuarioBase": {
+    "nome": "Usuario Teste Automatizado",
+    "password": "teste@123",
+    "administrador": "true"
+  },
+  "usuarioComum": {
+    "nome": "Usuario Comum Teste",
+    "password": "teste@123",
+    "administrador": "false"
+  },
+  "dadosInvalidos": {
+    "emailInvalido": {
+      "nome": "Usuario Teste",
+      "email": "email-invalido",
+      "password": "teste@123",
+      "administrador": "true"
+    },
+    "semNome": {
+      "nome": "",
+      "email": "teste@email.com",
+      "password": "teste@123",
+      "administrador": "true"
+    },
+    "semEmail": {
+      "nome": "Usuario Teste",
+      "email": "",
+      "password": "teste@123",
+      "administrador": "true"
+    },
+    "semSenha": {
+      "nome": "Usuario Teste",
+      "email": "teste@email.com",
+      "password": "",
+      "administrador": "true"
+    }
+  }
+}
